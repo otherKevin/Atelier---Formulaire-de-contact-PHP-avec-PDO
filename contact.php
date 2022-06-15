@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Préparation de la requête SQL
     $query = $dbh->prepare("INSERT INTO contacts(firstname,lastname,email,phone,message) VALUES(?,?,?,?,?)");
 
-    // Exécution de la requête ( $query->execute() ) ; $result (booléen) témoigne du succès de la requête
+    /* Exécution de la requête ( $query->execute() )
+    $result témoigne du succès de la requête en donnant le nombre de lignes crées (ici 1 ou 0) */
     $result = $query->execute([$firstname, $lastname, $email, $phone, $message]);
 };
 
